@@ -222,3 +222,4 @@ E:\NetCentric\CSITDemo\obj\Debug\netcoreapp3.1\staticwebassets\CSITDemo.StaticWe
 E:\NetCentric\CSITDemo\obj\Debug\netcoreapp3.1\CSITDemo.dll
 E:\NetCentric\CSITDemo\obj\Debug\netcoreapp3.1\CSITDemo.pdb
 E:\NetCentric\CSITDemo\obj\Debug\netcoreapp3.1\CSITDemo.genruntimeconfig.cache
+E:\NetCentric\CSITDemo\obj\Debug\netcoreapp3.1\Razor\Views\Student\GetSingleStudent.cshtml.g.cs

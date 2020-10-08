@@ -8,6 +8,7 @@ namespace CSITDemo.Models
 {
     public class StudentModel
     {
+        public int id { get; set; }
         [Required(ErrorMessage = "Please enter full name")]
         [Display(Name = "Full Name")]
         public string Name { get; set; }

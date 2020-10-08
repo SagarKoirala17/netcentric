@@ -1,31 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using CSITDemo.Controllers.API;
 using CSITDemo.Models;
+using CSITDemo.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CSITDemo.Controllers
 {
     public class StudentController : Controller
     {
-        public IActionResult Index()
-        {
-            var model = GetStudentsFromDb();
-            return View(model);
-        }
+        private readonly IStudentService _service;
 
-        private List<StudentModel> GetStudentsFromDb()
+        public StudentController(IStudentService service)
         {
-            List<StudentModel> students = new List<StudentModel>();
-            students.Add(new StudentModel { Name = "student 1", Address = "maitidevi" });
-            students.Add(new StudentModel { Name = "student 2", Address = "balaju" });
-            students.Add(new StudentModel { Name = "student 3", Address = "biratnagar" });
-
-            return students;
+            _service = service;
         }
 
         [HttpGet]
+
+        public IActionResult Index()
+        {
+            var model = _service.GetAllStudents();
+            return View(model);
+
+        }
+        public IActionResult GetSingleStudent(int id)
+        {
+            var model = _service.GetStudentById(id);
+            return View(model);
+        }
+
         public IActionResult Add()
         {
             return View();
